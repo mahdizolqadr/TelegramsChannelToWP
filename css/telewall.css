@@ -1,6 +1,6 @@
 .twContainer{
-    max-height: 400px;
-    width: 100%;
+    max-height: 400px; 
+    width: inherit;
     overflow-y: auto;
     direction: rtl;
     text-align: center; 
@@ -18,5 +18,4 @@
 .twView{ont-size: smaller; color: #5e5e5e; float: left; direction: ltr;}
 .twBorder{width: 70%; float: right; border: solid 3px black;}
 .twMsg{padding: 3px; text-align: justify;}
-
 
