@@ -12,7 +12,7 @@
     margin-top: 10px;
 }
 .tw-post-head-img{max-width: 20%;}
-.tw-post-head-img img {width: 100%;  border-radius: 50%;}
+.tw-post-head-img img {width: 128px;  border-radius: 50%;}
 .tw-post-title{}
 .twDate{font-size: smaller; color: grey}
 .twView{ont-size: smaller; color: #5e5e5e; float: left; direction: ltr;}
