@@ -1,4 +1,4 @@
-# TelegramsChannelToWP
+# Telegram's Channel To WordPress
 Embed Telegram's Channel content, view channel's content on your site from TeleWall Database (http://www.tele-wall.ir).
 
 
