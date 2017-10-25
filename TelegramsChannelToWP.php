@@ -3,7 +3,7 @@
  * Plugin Name: TelegramsChannelToWP
  * Plugin URI: http://www.tele-wall.ir/static/TelegramsChannelToWP.rar
  * Description: Embed Telegram's Channel content, view channel's content on your site from TeleWall Database (http://www.tele-wall.ir).
- * Version: The Plugin's Version Number, e.g.: 0.1
+ * Version: 0.1
  * Author: Mahdi Zolqadr
  * Author URI: http://www.tele-wall.ir/
  * License: A "Slug" license name e.g. GPL2
@@ -36,16 +36,18 @@ function register_TelegramsChannelToWP_settings() {
     //register our settings
     register_setting( 'TelegramsChannelToWP-settings-group', 'API_Key' );
     register_setting( 'TelegramsChannelToWP-settings-group', 'Channels_username' );
+    register_setting( 'TelegramsChannelToWP-settings-group', 'MaxHeight' );
+    register_setting( 'TelegramsChannelToWP-settings-group', 'Background' );
 }
 
 function TelegramsChannelToWP_settings_page() {
     ?>
-    <div class="wrap">
+    <div class="wrap" style="direction: ltr; text-align: left">
         <h1>Telegram's Channel To WordPress</h1>
         <h4>Embed Telegram's Channel content, view channel's content on your site from TeleWall Database (<a target="_blank" href="http://www.tele-wall.ir">http://www.tele-wall.ir</a>).</h4>
         <h5>Your Api-key: <?php  if ( esc_attr( get_option('API_Key') ) ) {echo esc_attr( get_option('API_Key') ); } ?> </h5>
         <p><b>How can i use it?</b></p>
-        <p>First, you must get API-Key from Telewall (<a target="_blank" href="http://www.tele-wall.ir/api/register/">http://tele-wall.ir/api/register/</a>), then fill require fields (your site and your favorite channel).
+        <p>First, you must get API-Key from Telewall (<a target="_blank" href="http://www.tele-wall.ir/api/register/">http://en.tele-wall.ir/api/register/</a>), then fill require fields (your site and your favorite channel).
             Go to plugin's page and set api-key and now last posts of telegrams channel appeare in your site.
         </p>
         <p style="color: red">
@@ -64,7 +66,14 @@ function TelegramsChannelToWP_settings_page() {
                     <th scope="row">Channel's Username</th>
                     <td><input type="text" name="Channels_username" value="<?php echo esc_attr( get_option('Channels_username') ); ?>" /></td>
                 </tr>
-
+<tr valign="top">
+                    <th scope="row">Max Height:</th>
+                    <td><input type="number" name="MaxHeight" value="<?php echo esc_attr( get_option('MaxHeight') ); ?>" /></td>
+                </tr>
+<tr valign="top">
+                    <th scope="row">Background Color: </th>
+                    <td><input type="text" name="Background" value="<?php echo esc_attr( get_option('Background') ); ?>" /></td>
+                </tr>
             </table>
 
             <?php submit_button(); ?>
@@ -93,13 +102,7 @@ class TelegramsChannelToWP_widget extends WP_Widget {
         );
     }
 
-
-    private function fetch_data(){
-//echo  __(  $server_output, 'TelegramsChannelToWP_widget_domain' );
-
-
-    }
-
+ 
     public function enqueue_public_style () {
 
         wp_enqueue_style(
@@ -135,7 +138,9 @@ class TelegramsChannelToWP_widget extends WP_Widget {
 
 // This is where you run the code and display the output
         ?>
-        <div id="TelegramsChannelToWP_widget_contents" class="twContainer">
+        <div id="TelegramsChannelToWP_widget_contents" class="twContainer" style="max-height: 
+<?php echo __(  esc_attr( get_option('MaxHeight') )  , 'TelegramsChannelToWP_widget_domain' );  ?>px; background: 
+<?php echo __(  esc_attr( get_option('Background') )  , 'TelegramsChannelToWP_widget_domain' );  ?>">
             <input type="hidden" id="TWapikey" value="<?php echo __(  esc_attr( get_option('API_Key') )  , 'TelegramsChannelToWP_widget_domain' );  ?>" />
             <input type="hidden" id="TWusername" value="<?php echo __(  esc_attr( get_option('Channels_username') )  , 'TelegramsChannelToWP_widget_domain' );    ?>" />
             <div id="TWContents"><img alt="loading..." src="<?php echo __(  plugin_dir_url( __FILE__ ) . 'img/loading.gif', 'TelegramsChannelToWP_widget_domain' );    ?>" /></div>
