@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: TelegramsChannelToWP
- * Plugin URI: http://www.tele-wall.ir/static/TelegramsChannelToWP.rar
- * Description: Embed Telegram's Channel content, view channel's content on your site from TeleWall Database (http://www.tele-wall.ir).
+ * Plugin URI: http://en.www.tele-wall.ir/api/register
+ * Description: Embed Telegram's Channel content, view channel's content on your site.
  * Version: 0.1
  * Author: Mahdi Zolqadr
  * Author URI: http://www.tele-wall.ir/
@@ -47,7 +47,7 @@ function TelegramsChannelToWP_settings_page() {
         <h4>Embed Telegram's Channel content, view channel's content on your site from TeleWall Database (<a target="_blank" href="http://www.tele-wall.ir">http://www.tele-wall.ir</a>).</h4>
         <h5>Your Api-key: <?php  if ( esc_attr( get_option('API_Key') ) ) {echo esc_attr( get_option('API_Key') ); } ?> </h5>
         <p><b>How can i use it?</b></p>
-        <p>First, you must get API-Key from Telewall (<a target="_blank" href="http://www.tele-wall.ir/api/register/">http://en.tele-wall.ir/api/register/</a>), then fill require fields (your site and your favorite channel).
+        <p>First, you must get API-Key from Telewall (<a target="_blank" href="http://en.tele-wall.ir/api/register/">http://en.tele-wall.ir/api/register/</a>), then fill require fields (your site and your favorite channel).
             Go to plugin's page and set api-key and now last posts of telegrams channel appeare in your site.
         </p>
         <p style="color: red">
@@ -59,20 +59,29 @@ function TelegramsChannelToWP_settings_page() {
             <table class="form-table">
                 <tr valign="top">
                     <th scope="row">API-KEY</th>
-                    <td><input type="text" name="API_Key" value="<?php echo esc_attr( get_option('API_Key') ); ?>" /></td>
+                    <td><input type="text"  placeholder="Api-Key" name="API_Key" value="<?php echo esc_attr( get_option('API_Key') ); ?>" /></td>
                 </tr>
 
                 <tr valign="top">
                     <th scope="row">Channel's Username</th>
-                    <td><input type="text" name="Channels_username" value="<?php echo esc_attr( get_option('Channels_username') ); ?>" /></td>
+                    <td><input  placeholder="Channel's Username" type="text" name="Channels_username" value="<?php echo esc_attr( get_option('Channels_username') ); ?>" /></td>
                 </tr>
 <tr valign="top">
                     <th scope="row">Max Height:</th>
-                    <td><input type="number" name="MaxHeight" value="<?php echo esc_attr( get_option('MaxHeight') ); ?>" /></td>
+                    <td><input type="number" name="MaxHeight"  placeholder="400" value="<?php 
+if (esc_attr( get_option('MaxHeight') ))
+	echo esc_attr( get_option('MaxHeight') );
+else
+  echo '400'; ?>" /></td>
                 </tr>
 <tr valign="top">
                     <th scope="row">Background Color: </th>
-                    <td><input type="text" name="Background" value="<?php echo esc_attr( get_option('Background') ); ?>" /></td>
+                    <td><input placeholder="color" type="text" name="Background" value="<?php 
+if (esc_attr( get_option('Background') ))
+  echo esc_attr( get_option('Background') );
+else
+  echo 'white';
+?>" /></td>
                 </tr>
             </table>
 
