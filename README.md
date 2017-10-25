@@ -1,5 +1,5 @@
 # Telegram's Channel To WordPress
-Embed Telegram's Channel content, view channel's content on your site from TeleWall Database (http://www.tele-wall.ir).
+Embed Telegram's Channel content, view channel's content on your site from TeleWall Database (http://en.tele-wall.ir).
 
 
 ## Plugin Name
@@ -23,5 +23,5 @@ Tested up to: 4.7
 
   How can i use it?
 
-  First, you must get API-Key from Telewall (http://tele-wall.ir/api/register/), then fill require fields (your site and your favorite channel). 
+  First, you must get API-Key from Telewall (http://en.tele-wall.ir/api/register/), then fill require fields (your site and your favorite channel). 
 Go to plugin's page and set api-key and now last posts of telegrams channel appeare in your site.
