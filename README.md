@@ -17,8 +17,7 @@ Tested up to: 4.7
   Requires PHP version 5.4 or greater.
 
   Embed Telegram's Channel content
-  Embed Twitter content by pasting a URL, customizing a shortcode, or in a widget area.
-
+  
 ## Frequently Asked Questions
 
   How can i use it?
