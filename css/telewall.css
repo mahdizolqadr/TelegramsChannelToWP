@@ -15,7 +15,7 @@
 .tw-post-head-img img {width: 128px;  border-radius: 50%;}
 .tw-post-title{}
 .twDate{font-size: smaller; color: grey}
-.twView{ont-size: smaller; color: #5e5e5e; float: left; direction: ltr;}
+.twView{font-size: smaller; color: #5e5e5e; float: left; direction: ltr;}
 .twBorder{width: 70%; float: right; border: solid 3px black;}
 .twMsg{padding: 3px; text-align: justify;}
 
